@@ -1,24 +1,44 @@
 import React from 'react';
-import { ScrollView, Text,  } from 'react-native';
-import { enableBluetooth,  } from 'react-native-ble-manager'
-const logo = {
-  uri: 'https://reactnative.dev/img/tiny_logo.png',
-  width: 64,
-  height: 64
-};
+import {ScrollView, Text} from 'react-native';
+import BleManager from 'react-native-ble-manager';
 
-export default function App () {
-
-  function startble () {
-    alert('teste')
-    enableBluetooth().then(() => {
-      // Success code
-      alert("Scan started");
+const id = '24:62:ab:dc:d8:fe';
+export default function App() {
+  function conectar() {
+    BleManager.connect(id)
+      .then(() => {
+        // Success code
+        console.log('Connected');
+      })
+      .catch((error) => {
+        // Failure code
+        console.log(error);
+      });
+  }
+  function disconectar() {
+    BleManager.disconnect(id)
+      .then(() => {
+        console.log('Disconnected');
+      })
+      .catch((error) => {
+        // Failure code
+        console.log(error);
+      });
+  }
+  function scan() {
+    console.log('foi');
+    BleManager.getDiscoveredPeripherals([]).then((peripheralsArray) => {
+      for (let i of peripheralsArray) {
+        console.log('=====================================');
+        console.log(i);
+      }
     });
   }
   return (
     <ScrollView>
-      <Text onPress={() => startble()} style={{ fontSize: 80 }}>Ligar bluetooth</Text>
+      <Text onPress={() => conectar()}>Ligar O bluetooth</Text>
+      <Text onPress={() => disconectar()}>deslifar O bluetooth</Text>
+      <Text onPress={() => scan()}>SCANs</Text>
     </ScrollView>
   );
 }

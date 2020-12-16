@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "120893488091",
+    "project_id": "ble-mananger",
+    "storage_bucket": "ble-mananger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120893488091:android:9b54d58df06d4807d985fe",
+        "android_client_info": {
+          "package_name": "com.bolsa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120893488091-14seap3vur68t0qst1v43econj9ligqg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6Vt9mTMQEqaNrPP-stUrCjf69maqTTpM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120893488091-14seap3vur68t0qst1v43econj9ligqg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
