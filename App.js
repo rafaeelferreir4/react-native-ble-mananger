@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ScrollView, Text} from 'react-native';
 import BleManager from 'react-native-ble-manager';
 import database from '@react-native-firebase/database';
 
-const reference = database().ref('/users/123');
+import style from './style';
 const id = '24:62:ab:dc:d8:fe';
 
 export default function App() {
+  const [mensagem, setMensagem] = useState('a');
+
   function conectar() {
     BleManager.connect(id)
       .then(() => {
@@ -42,8 +44,8 @@ export default function App() {
     database()
       .ref('/')
       .once('value')
-      .then(snapshot => {
-        console.log('User data: ', snapshot.val());
+      .then((snapshot) => {
+        setMensagem(snapshot.val());
       });
   }
   return (
@@ -52,6 +54,7 @@ export default function App() {
       <Text onPress={() => disconectar()}>deslifar O bluetooth</Text>
       <Text onPress={() => scan()}>SCANs</Text>
       <Text onPress={() => readDatabase()}>Banco</Text>
+      <Text style={style.msg}>{mensagem}</Text>
     </ScrollView>
   );
 }
