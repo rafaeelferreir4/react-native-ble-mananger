@@ -1,25 +1,29 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {ScrollView, Text} from 'react-native';
 import BleManager from 'react-native-ble-manager';
 import database from '@react-native-firebase/database';
 
 import style from './style';
-const id = '24:62:ab:dc:d8:fe';
+const id = '24:62:AB:DC:D8:FE';
 
 export default function App() {
   const [mensagem, setMensagem] = useState('a');
-
-  function conectar() {
-    BleManager.connect(id)
-      .then(() => {
-        // Success code
-        console.log('Connected');
-      })
-      .catch((error) => {
-        // Failure code
-        console.log(error);
-      });
-  }
+  const [arrayId, setArrayId] = useState([]);
+  const [arrayLocal, setArrayLocal] = useState([]);
+  useEffect(() => {
+    setInterval(10000);
+    readDatabase();
+    for (let i = 0; i < arrayId.length; i++) {
+      BleManager.connect(arrayId[i])
+        .then(() => {
+          setMensagem('Você está em:' + arrayLocal[i]);
+        })
+        .catch((error) => {
+          // Failure code
+          // console.log(error);
+        });
+    }
+  });
   function disconectar() {
     BleManager.disconnect(id)
       .then(() => {
@@ -42,10 +46,16 @@ export default function App() {
 
   function readDatabase() {
     database()
-      .ref('/')
+      .ref('/id')
       .once('value')
       .then((snapshot) => {
-        setMensagem(snapshot.val());
+        setArrayId(snapshot.val().split(','));
+      });
+    database()
+      .ref('/local')
+      .once('value')
+      .then((snapshot) => {
+        setArrayLocal(snapshot.val().split(','));
       });
   }
   return (
