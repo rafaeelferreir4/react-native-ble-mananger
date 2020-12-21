@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React,  {useState} from 'react';
 import {ScrollView, Text} from 'react-native';
 import BleManager from 'react-native-ble-manager';
 import database from '@react-native-firebase/database';
@@ -10,20 +10,25 @@ export default function App() {
   const [mensagem, setMensagem] = useState('a');
   const [arrayId, setArrayId] = useState([]);
   const [arrayLocal, setArrayLocal] = useState([]);
-  useEffect(() => {
-    setInterval(10000);
-    readDatabase();
+  readDatabase();
+
+  setInterval(() => {
+    setLocal();
+  }, 10000);
+
+  function setLocal() {
     for (let i = 0; i < arrayId.length; i++) {
-      BleManager.connect(arrayId[i])
-        .then(() => {
-          setMensagem('Você está em:' + arrayLocal[i]);
-        })
-        .catch((error) => {
-          // Failure code
-          // console.log(error);
-        });
+      // BleManager.connect(arrayId[i])
+      //   .then(() => {
+      //     setMensagem('Você está em:' + arrayLocal[i]);
+      //   })
+      //   .catch((error) => {
+      //     // Failure code
+      //     // console.log(error);
+      //   });
+      console.log(i)
     }
-  });
+  }
   function disconectar() {
     BleManager.disconnect(id)
       .then(() => {
@@ -60,7 +65,6 @@ export default function App() {
   }
   return (
     <ScrollView>
-      <Text onPress={() => conectar()}>Ligar O bluetooth</Text>
       <Text onPress={() => disconectar()}>deslifar O bluetooth</Text>
       <Text onPress={() => scan()}>SCANs</Text>
       <Text onPress={() => readDatabase()}>Banco</Text>
