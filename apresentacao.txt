@@ -1,0 +1,56 @@
+Slide 1 ------------------------------------------------------------------------
+
+	Olá, meu nome é Rafael Silveira Ferreira. Eu vim apresentar o projeto
+	Ferramenta de Auxílio para deficientes visuais na mobilidade dentro do
+	IFRS - Campus Rio Grande. No qual eu sou orientado por Everton Luis Almeida e a professora Raquel de Miranda Barbosa.
+
+Slide 2 ------------------------------------------------------------------------
+
+	Notando a dificuldade na qual os deficientes visuais passam ao tentar se localizar dentro do campus, foi pensado em uma soluçao para esse problema.
+	Levando em consideração que essa solução deveria ser simples acessivel e barata, para de fato ser implementada.
+
+Slide 3 ------------------------------------------------------------------------
+
+	O principal objetivo do projeto é desenvolver um aplicativo para celular que faça uma conexão via bluetooth com a placa ESP32, a partir disso fazer com que o ESP transmita uma mensagem para o aplicativo com a localização do usuário, essa mensagem seria exibida no aplicativo, e após isso lida pelo leitor de tela nativo do celular
+
+Slide 4 ------------------------------------------------------------------------
+
+	Aqui tem um exemplo simples de uso da ferramenta, no qual o usuário está chegando proximo da divisao de computação aqui do campus, e o aplicativo faz a conexão com a placa que está instalada na sala assim fornecendo ao usuario a informaçao de sua localização
+
+Slide 5 ------------------------------------------------------------------------
+
+	Os passos para ser seguidos seriam:
+
+		Desenvolver um script para a placa ESP32, esse script trataria da conexão bluetooth e da transmição da mensagem através da mesma, além disso, conexão com a rede wifi para obter acesso a internet e com isso a conexão com o firebase, que foi o banco de dados escolhido.
+
+		Desenvolver um aplicativo para celular, esse aplicativo tem que ser simples e acessivel para que o usuário possa fazer o uso do leitor de tela e também seria responsável por gerenciar o bluetooth do dispositivo, para ele garantir que o bluetooth está ligado e para fazer a conexão.
+
+		por ultimo criariamos um aplicativo web que faria uma conexão com o banco de dados para assim por gerencialo mais facilmente.
+
+Slide 6 ------------------------------------------------------------------------
+
+	Esse é um diagrama que explica o funcionamento da ferramenta, o esp32 fica conectado via wireless com o roteador do campus, assim se conectando a internet, assim lendo os dados do firebase, e esperando que algum dispositivo se conecte com ele via bluetooth para transmitar a mensagem lida do banco de dados
+
+Slide 7 ------------------------------------------------------------------------
+
+	Agora eu vou explicar o porque de cada componente:
+
+	Optamos pelo esp32 principalmente pelo seu custo beneficio pois além de nao ser uma placa muito cara, ja vem nele a disponibilidade de conexao bluetooth e wireless, fora que ele pode ser alimentado por uma fonte 12 voltz atraves de uma entrada micro usb
+
+Slide 8 ------------------------------------------------------------------------
+
+	Para o desenvolvimento do aplicativo está sendo utilizado o framework React Native pela facilidade de utilização de componentes internos do smartphone, através de bibliotecas já existentes como por exemplo o react-native-ble-manager, que auxilia na manipulação do bluetooth. além disso pela compatibilidade com as plataformas IOS e ANDROID.
+
+Slide 9 ------------------------------------------------------------------------
+
+	para base de dados foi escolhido o firebase por ser um banco de dados nao relacional, ou seja, sem a estrutura de entidade e relacionamentos, como nosso projeto nao necessita de uma base de dados muito complexa, e pela existencia de bibliotecas que fazem o esp se conectar a ele
+
+Slide 10 -----------------------------------------------------------------------
+
+	Até o momento desse video, foi desenvolvido o script que faz habilita o bluetooth da placa, se conecta com a rede wifi, e lê os dados do firebase
+
+	além disso o aplicativo para celular ja foi iniciado, e o gerenciamento do bluetooth já esta praticamente pronto
+
+Slide 11 -----------------------------------------------------------------------
+
+	Após finalizado o aplicativo, em conjunto com as placas, tem como foco principal o auxilio a pessoas com deficiencia visual na locomoção e localização dentro do campus, mas poderá ser utilizado também para outros fins como por exemplo a semana de visitação no campus. podendo por exemplo colocar informaçoes dos cursos
