@@ -1,21 +1,23 @@
 Slide 1 ------------------------------------------------------------------------
 
-	Olá, meu nome é Rafael Silveira Ferreira. Eu vim apresentar o projeto
+	Olá, meu nome é Rafael Silveira Ferreira. Eu vim apresentar o projeto:
 	Ferramenta de Auxílio para deficientes visuais na mobilidade dentro do
 	IFRS - Campus Rio Grande. No qual eu sou orientado por Everton Luis Almeida e a professora Raquel de Miranda Barbosa.
 
 Slide 2 ------------------------------------------------------------------------
 
-	Notando a dificuldade na qual os deficientes visuais passam ao tentar se localizar dentro do campus, foi pensado em uma soluçao para esse problema.
-	Levando em consideração que essa solução deveria ser simples acessivel e barata, para de fato ser implementada.
+	Tecnologias assistivas
 
 Slide 3 ------------------------------------------------------------------------
+	
+	Notando a dificuldade na qual os deficientes visuais passam ao tentar se localizar dentro do campus, foi pensado em uma soluçao para esse problema.
+	Levando em consideração que essa solução deveria ser simples, acessivel e barata, para de fato ser implementada.
 
-	O principal objetivo do projeto é desenvolver um aplicativo para celular que faça uma conexão via bluetooth com a placa ESP32, a partir disso fazer com que o ESP transmita uma mensagem para o aplicativo com a localização do usuário, essa mensagem seria exibida no aplicativo, e após isso lida pelo leitor de tela nativo do celular
+		Nos dias atuais percebemos um grande avanço na área de tecnologia com uma crescente utilização de equipamentos smart tais como: smart tv e smartphone , porém ainda existem pessoas que não conseguem usufruir destes benefícios por possuírem algum tipo de deficiência. A área de tecnologias assistivas procura tratar deste problema apresentando soluções que sejam capazes de promover uma maior autonomia para essas pessoas. Este projeto foi desenvolvido levando em consideração as dificuldades que os deficientes visuais enfrentam no dia-a-dia para locomover-se em suas escolas. No IFRS, campus Rio Grande, também observa-se esta necessidade, uma vez que a instituição possui alunos cegos que poderiam ter uma maior autonomia na sua locomoção
 
 Slide 4 ------------------------------------------------------------------------
 
-	Aqui tem um exemplo simples de uso da ferramenta, no qual o usuário está chegando proximo da divisao de computação aqui do campus, e o aplicativo faz a conexão com a placa que está instalada na sala assim fornecendo ao usuario a informaçao de sua localização
+	esse aqui é um exemplo simples de uso da ferramenta, no qual o usuário está chegando proximo da divisao de computação aqui do campus, e o aplicativo faz a conexão com a placa que está instalada na sala assim fornecendo ao usuario a informaçao de sua localização
 
 Slide 5 ------------------------------------------------------------------------
 
@@ -25,11 +27,11 @@ Slide 5 ------------------------------------------------------------------------
 
 		Desenvolver um aplicativo para celular, esse aplicativo tem que ser simples e acessivel para que o usuário possa fazer o uso do leitor de tela e também seria responsável por gerenciar o bluetooth do dispositivo, para ele garantir que o bluetooth está ligado e para fazer a conexão.
 
-		por ultimo criariamos um aplicativo web que faria uma conexão com o banco de dados para assim por gerencialo mais facilmente.
+		por ultimo devemos criar um aplicativo web que faria uma conexão com o banco de dados para assim por gerencia-lo mais facilmente.
 
 Slide 6 ------------------------------------------------------------------------
 
-	Esse é um diagrama que explica o funcionamento da ferramenta, o esp32 fica conectado via wireless com o roteador do campus, assim se conectando a internet, assim lendo os dados do firebase, e esperando que algum dispositivo se conecte com ele via bluetooth para transmitar a mensagem lida do banco de dados
+	Esse é um diagrama que explica o funcionamento da ferramenta, o esp32 fica conectado via wireless com o roteador do campus, assim se conectando a internet, ele fica lendo os dados do firebase, e esperando que algum dispositivo se conecte com ele via bluetooth para transmitar a mensagem lida do banco de dados
 
 Slide 7 ------------------------------------------------------------------------
 
@@ -43,14 +45,14 @@ Slide 8 ------------------------------------------------------------------------
 
 Slide 9 ------------------------------------------------------------------------
 
-	para base de dados foi escolhido o firebase por ser um banco de dados nao relacional, ou seja, sem a estrutura de entidade e relacionamentos, como nosso projeto nao necessita de uma base de dados muito complexa, e pela existencia de bibliotecas que fazem o esp se conectar a ele
+	para base de dados foi escolhido o firebase que é um banco de dados nao relacional, ou seja, sem a estrutura de entidade e relacionamentos,optamos por ele já que nosso projeto nao necessita de uma base de dados muito complexa, alem disso existem bibliotecas que fazem o esp se conectar a ele assim facilitando bastante nosso trabalho
 
 Slide 10 -----------------------------------------------------------------------
 
-	Até o momento desse video, foi desenvolvido o script que faz habilita o bluetooth da placa, se conecta com a rede wifi, e lê os dados do firebase
+	Até o momento desse video, foi desenvolvido o script que habilita o bluetooth da placa, se conecta com a rede wifi, e lê os dados do firebase
 
-	além disso o aplicativo para celular ja foi iniciado, e o gerenciamento do bluetooth já esta praticamente pronto
+	além disso o aplicativo para celular ja foi iniciado, e o gerenciamento do bluetooth já esta praticamente pronto.
 
 Slide 11 -----------------------------------------------------------------------
 
-	Após finalizado o aplicativo, em conjunto com as placas, tem como foco principal o auxilio a pessoas com deficiencia visual na locomoção e localização dentro do campus, mas poderá ser utilizado também para outros fins como por exemplo a semana de visitação no campus. podendo por exemplo colocar informaçoes dos cursos
+	verificação com o público alvo
