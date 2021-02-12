@@ -1,12 +1,12 @@
 # react-native-ble-mananger
 
-### Config's
+# Config's
 
 ## Local das Sdk's
-# android/local.properties => sdk.dir = /Users/{USERNAME}/Android/sdk
+### android/local.properties => sdk.dir = /Users/{USERNAME}/Android/sdk
 
 ## Config da porta
-# https://reactnative.dev/docs/running-on-device
+### https://reactnative.dev/docs/running-on-device
 
 ## Config da porta do arduino no linux
-# sudo chmod a+rw /dev/ttyUSB0
+### sudo chmod a+rw /dev/ttyUSB0
