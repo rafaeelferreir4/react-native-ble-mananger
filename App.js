@@ -1,5 +1,5 @@
 import React,  {useState} from 'react';
-import {ScrollView, Text} from 'react-native';
+import {View, Text} from 'react-native';
 import BleManager from 'react-native-ble-manager';
 import database from '@react-native-firebase/database';
 
@@ -7,10 +7,10 @@ import style from './style';
 const id = '24:62:AB:DC:D8:FE';
 
 export default function App() {
-  const [mensagem, setMensagem] = useState('a');
+  const [mensagem, setMensagem] = useState('Teste');
   const [arrayId, setArrayId] = useState([]);
   const [arrayLocal, setArrayLocal] = useState([]);
-  readDatabase();
+  // readDatabase();
 
   setInterval(() => {
     setLocal();
@@ -63,12 +63,12 @@ export default function App() {
         setArrayLocal(snapshot.val().split(','));
       });
   }
+  function test() {
+    console.log('test');
+  }
   return (
-    <ScrollView>
-      <Text onPress={() => disconectar()}>deslifar O bluetooth</Text>
-      <Text onPress={() => scan()}>SCANs</Text>
-      <Text onPress={() => readDatabase()}>Banco</Text>
-      <Text style={style.msg}>{mensagem}</Text>
-    </ScrollView>
+    <View>
+      <Text onPress={() => test()} style={style.msg}>{mensagem}</Text>
+    </View>
   );
 }
